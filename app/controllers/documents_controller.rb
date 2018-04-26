@@ -1,6 +1,6 @@
 class DocumentsController < ApplicationController
 
-  before_action :set_document, only: [:show]
+  before_action :set_document, only: [:show, :edit, :update, :destroy]
 
   def index
     @documents = Document.all.order('created_at DESC')
@@ -17,6 +17,11 @@ class DocumentsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def destroy
+    @document.destroy
+    redirect_to documents_path
   end
 
   private
