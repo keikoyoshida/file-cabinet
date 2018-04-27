@@ -2,4 +2,4 @@
 %p= @document.content
 = link_to "All Documents", documents_path
 = link_to "Fix Document", edit_document_path(@document)
-= link_to "Trash It", document_deletes_path(@document), method: :delete, data: { confirm: "Are you sure?"}
+= link_to "Trash It", document_delete_path(@document), method: :delete, data: { confirm: "Are you sure?"}
