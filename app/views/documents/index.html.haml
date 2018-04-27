@@ -2,3 +2,4 @@
   %h2= link_to document.title, document_path(document)
   %p= time_ago_in_words(document.created_at)
   %p= truncate(document.content, length:50)
+= link_to 'Create Document', new_document_path
