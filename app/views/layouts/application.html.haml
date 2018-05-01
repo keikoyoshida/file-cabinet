@@ -7,6 +7,17 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header
+      = link_to "FileCabinet", root_path
+
+      %nav
+        - if user_signed_in?
+          = link_to "Create Document", new_document_path
+          = link_to "Sign Out", destroy_user_session_path, method: :delete
+
+        - else
+          =link_to "Sign In", user_session_path
+
     %p.notice= notice
     %p.alert= alert
     = yield
