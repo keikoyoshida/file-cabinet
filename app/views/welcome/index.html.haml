@@ -1,1 +1,16 @@
-%h1 File Cabinet!
+#banner
+  .container.text-center
+    %h1.display-3.strong.text-blue FILE CABINET
+    %p.lead.text-blue Your life's work. Organized, always.
+    %button.btn.col-md-2.bg-blue= link_to "Enter", new_user_registration_path, class: "text-white"
+
+#callouts.jumbotron{ style: 'background-image: url(assets/experience-the-best-views-of-san-diego.jpg); background-size: cover; background-position: center 60%;' }
+  .container.text-center.text-white
+    %h2 Organize
+    %p An organized business is a productive business. You may not consider yourself blessed with natural organizational skills, but now is the perfect time to get your business and work space organized.
+
+#bottom_cta
+  .container.text-center
+    %h2 Go Ahead!
+    %button.btn.col-md-2.bg-blue= link_to "Join Now", new_user_registration_path, class: "text-white"
+
