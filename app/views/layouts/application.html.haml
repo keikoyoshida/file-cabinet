@@ -1,10 +1,25 @@
 !!!
 %html
   %head
-    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title FileCabinet
+    %meta{content: "text/html; charset=UTF-8", "http-equiv": "Content-Type"}/
+    %meta{name: "viewport", content: "width=device-width, initial-scale: 1"}
+    %title FileCabinet | Your life's work!
     = csrf_meta_tags
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %nav.navbar.navbar-expand-lg.navbar-light.bg-blue
+      = link_to "FileCabinet", root_path, class: "navbar-brand text-white"
+      %button.navbar-toggler{ type: "button", "data-toggle": "collapse", "data-target": "#navbarNav", "aria-controls": "navbarNav", "aria-expanded": "false", "aria-label": "Toggle navigation" }
+        %span.navbar-toggler-icon
+      .collapse.navbar-collapse#navbarNav.justify-content-end
+        %ul.navbar-nav
+          - if user_signed_in?
+            %li.nav-item= link_to "Create Document", new_document_path, class: "nav-link text-white"
+            %li.nav-item= link_to "Sign Out", destroy_user_session_path, method: "delete", class: "nav-link text-white"
+          - else
+            %li.nav-item=link_to "Sign In", user_session_path, class: "nav-link text-white"
+
+    %p.notice= notice
+    %p.alert= alert
     = yield

@@ -1,0 +1,29 @@
+//link
+a:hover {
+  text-decoration: none;
+}
+
+//shape
+.border-radius50 {
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
+
+//colors
+.bg-blue {
+  background-color: $blue;
+}
+
+.bg-brown {
+  background-color: $brown;
+}
+
+.text-blue {
+  color: $blue;
+}
+
+.text-brown {
+  color: $brown;
+}
+

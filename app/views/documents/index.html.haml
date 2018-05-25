@@ -1,0 +1,12 @@
+- unless @documents.blank?
+  - @documents.each do |document|
+    .container.col-md-10.bg-brown.mx-auto.border-radius50.mt-5
+      = link_to document_path(document), class: "text-white"  do
+        %h4.text-center.pt-3= document.title
+        .row.small
+          %p.col-md-4.text-center= time_ago_in_words(document.created_at)
+          %p.col-md-4= truncate(document.content, length:50)
+-else
+  %h2 Create Doc!
+  %p Start Creating Documents and Organizing Your Life!
+  %button= link_to 'Create Document', new_document_path
