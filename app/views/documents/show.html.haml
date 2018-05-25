@@ -1,0 +1,7 @@
+.container.col-md-10.mx-auto
+  %h1.text-brown.text-center= @document.title
+  %hr.text-blue
+  %p= simple_format(@document.content)
+  %nav.navbar.navbar-expand-lg.justify-content-center
+    %button.btn.col-md-2.bg-blue.mr-3= link_to "Fix Document", edit_document_path(@document), class: "text-white"
+    %button.btn.col-md-2.bg-blue= link_to "Trash It", document_delete_path(@document), method: :delete, data: { confirm: "Are you sure?"}, class: "text-white"

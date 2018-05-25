@@ -1,0 +1,5 @@
+= simple_form_for @document do |f|
+  .form-group
+    = f.input :title, class: "form-control"
+    = f.input :content, input_html: {rows: 10}, class: "form-control"
+    = f.button :submit, class: "btn col-md-3 bg-blue text-white"

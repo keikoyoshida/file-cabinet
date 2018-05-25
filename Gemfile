@@ -54,8 +54,8 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'simple_form'
 
-gem 'bootstrap-sass'
-
 gem 'devise'
 
 gem "haml-rails", "~> 1.0"
+
+gem 'bootstrap', '~> 4.1.1'
